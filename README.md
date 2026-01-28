@@ -147,16 +147,24 @@ http://localhost:3000 にアクセスしてください。
 ### `POST /api/scrape`
 X API からデータを収集してデータベースに保存
 
-## ✅ 次のステップ
+## ✅ デプロイ完了
 
-1. X API Bearer Token の取得
+- **本番URL**: https://dhukatu.vercel.app
+- **GitHub**: https://github.com/Nisss78/dhukatu
+- **定期スクレイピング**: 1日1回 (JST 9:00実行)
+
+## 🔧 次のステップ（運用開始前に必要）
+
+1. **X API Bearer Token の取得**
    - https://developer.twitter.com/en/portal/dashboard
+   - Vercelの環境変数 `X_BEARER_TOKEN` に設定
 
-2. Convex プロダクション環境の設定
+2. **Convex プロダクション環境の設定**
+   - `npx convex deploy` で本番DB作成
+   - `NEXT_PUBLIC_CONVEX_URL` をVercel環境変数に設定
 
-3. Vercel へのデプロイ
-
-4. 定期スクレイピングの設定（Cron Jobs）
+3. **データ取得テスト**
+   - `/api/scrape` にPOSTしてデータ収集確認
 
 ## 📄 ライセンス
 
