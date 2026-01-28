@@ -34,6 +34,7 @@ export default function CompanyDetailPage() {
       {
         id: "1",
         type: "web",
+        location: "",
         notes: "自宅から受験可能",
       },
     ],
