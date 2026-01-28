@@ -1,0 +1,333 @@
+/* react-big-calendar カスタムスタイル */
+
+/* カレンダーのベーススタイル */
+.rbc-calendar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+/* ツールバー */
+.rbc-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rbc-toolbar-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 200px;
+  text-align: center;
+}
+
+.rbc-btn-group {
+  display: flex;
+  gap: 2px;
+}
+
+.rbc-btn-group button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rbc-btn-group button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.rbc-btn-group button.rbc-active {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.rbc-btn-group button:first-child {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.rbc-btn-group button:last-child {
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.rbc-btn-group button:not(:last-child) {
+  margin-right: -1px;
+}
+
+/* ビュー切り替え */
+.rbc-month-view,
+.rbc-time-view,
+.rbc-agenda-view {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* 月ビュー */
+.rbc-month-view {
+  background: white;
+}
+
+.rbc-header {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-month-row + .rbc-month-row {
+  border-top: 1px solid #e5e7eb;
+}
+
+.rbc-date-cell {
+  padding: 0.25rem;
+  transition: background 0.2s;
+}
+
+.rbc-date-cell.rbc-today {
+  background: #eff6ff;
+}
+
+.rbc-date-cell.rbc-today .rbc-number {
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rbc-off-range-bg {
+  background: #f9fafb;
+}
+
+.rbc-row-bg {
+  background: transparent;
+}
+
+.rbc-row-bg .rbc-off-range-bg:nth-child(odd),
+.rbc-row-bg .rbc-off-range-bg:nth-child(even) {
+  background: #f9fafb;
+}
+
+.rbc-day-bg + .rbc-day-bg {
+  border-left: 1px solid #e5e7eb;
+}
+
+.rbc-month-view .rbc-day-bg {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* イベント */
+.rbc-event {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.125rem;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.rbc-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rbc-event.rbc-selected {
+  outline: 2px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+.rbc-events-cluster {
+  position: relative;
+  z-index: 10;
+}
+
+.rbc-show-more {
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rbc-show-more:hover {
+  background: #e5e7eb;
+}
+
+/* 日表示 */
+.rbc-day-bg .rbc-events {
+  bottom: 0.25rem;
+  left: 0.25rem;
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+}
+
+.rbc-agenda-view {
+  background: white;
+}
+
+.rbc-agenda-view table.rbc-agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rbc-agenda-view .rbc-agenda-time {
+  width: 80px;
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.rbc-agenda-view .rbc-agenda-date-cell {
+  padding: 0.5rem;
+  vertical-align: top;
+  width: 200px;
+}
+
+.rbc-agenda-view .rbc-agenda-event-cell {
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.rbc-agenda-view .rbc-agenda-event {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+}
+
+/* 週・日ビュー */
+.rbc-time-view {
+  background: white;
+}
+
+.rbc-time-view .rbc-allday-cell {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-time-view .rbc-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem;
+}
+
+.rbc-time-view-resources .rbc-header {
+  border-bottom: 1px solid #e5e7eb;
+  border-left: 1px solid #e5e7eb;
+}
+
+.rbc-time-content {
+  border-top: 1px solid #e5e7eb;
+}
+
+.rbc-time-content > .rbc-time-gutter {
+  border-right: 1px solid #e5e7eb;
+}
+
+.rbc-time-gutter .rbc-timeslot-group {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.rbc-timeslot-group {
+  min-height: 40px;
+}
+
+.rbc-time-view .rbc-time-header-gutter {
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.25rem 0;
+}
+
+.rbc-current-time-indicator {
+  width: 2px;
+  background: #ef4444;
+  z-index: 5;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .rbc-toolbar-label {
+    color: #e5e7eb;
+  }
+
+  .rbc-btn-group button {
+    background: #374151;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  .rbc-btn-group button:hover {
+    background: #4b5563;
+    border-color: #6b7280;
+  }
+
+  .rbc-month-view,
+  .rbc-time-view,
+  .rbc-agenda-view {
+    background: #1f2937;
+    border-color: #374151;
+  }
+
+  .rbc-header {
+    color: #9ca3af;
+    border-color: #374151;
+  }
+
+  .rbc-agenda-view {
+    background: #1f2937;
+  }
+
+  .rbc-time-view .rbc-header {
+    border-color: #374151;
+  }
+
+  .rbc-off-range-bg {
+    background: #111827;
+  }
+
+  .rbc-show-more {
+    background: #374151;
+    color: #9ca3af;
+  }
+
+  .rbc-show-more:hover {
+    background: #4b5563;
+  }
+
+  .rbc-month-view .rbc-day-bg {
+    border-color: #374151;
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .rbc-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rbc-toolbar-label {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+
+  .rbc-btn-group {
+    justify-content: center;
+  }
+}
